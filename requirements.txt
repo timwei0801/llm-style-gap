@@ -1,0 +1,50 @@
+# ============================================
+# Core
+# ============================================
+python-dotenv>=1.0.0
+pydantic>=2.0
+tqdm>=4.65
+loguru>=0.7
+
+# ============================================
+# LLM API clients
+# ============================================
+anthropic>=0.40.0
+openai>=1.40.0
+google-generativeai>=0.8.0
+groq>=0.13.0
+ollama>=0.3.0
+
+# ============================================
+# Feature extraction
+# ============================================
+bert-score>=0.3.13
+sentence-transformers>=3.0.0
+transformers>=4.40.0
+torch>=2.0.0
+nltk>=3.8
+
+# ============================================
+# Analysis & viz
+# ============================================
+numpy>=1.26
+pandas>=2.0
+scipy>=1.11
+scikit-learn>=1.4
+seriation>=0.1.0  # Python alternative if GAP software unavailable
+matplotlib>=3.8
+seaborn>=0.13
+plotly>=5.18
+
+# ============================================
+# Utilities
+# ============================================
+pyyaml>=6.0
+jsonschema>=4.20
+tenacity>=8.2  # for retry logic
+
+# ============================================
+# Dev (optional)
+# ============================================
+ipykernel>=6.28
+jupyter>=1.0
