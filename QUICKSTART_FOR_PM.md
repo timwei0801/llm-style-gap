@@ -98,7 +98,7 @@ claude
 ```bash
 tmux new -s claude-runner
 export CLAUDE_CODE_EXPERIMENTAL_AGENT_TEAMS=1
-claude --headless "Tech Lead, 請啟動 API Runner 跑完所有 9 個 API 模型,然後啟動 GPU Runner 跑 4 個本地模型。完成後在 issue #X 留言通知我。"
+claude --headless "Tech Lead, 請啟動 API Runner 跑完所有 9 個 API 模型,然後啟動 GPU Runner 跑 3 個本地模型。完成後在 issue #X 留言通知我。"
 # Ctrl+B D
 ```
 

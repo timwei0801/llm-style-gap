@@ -76,19 +76,18 @@ class SamplingResult:
 # -----------------------------
 MODEL_REGISTRY = [
     # (id, provider, family, is_anchor, anchor_pair)
-    ("claude-opus-4-7",   "anthropic", "claude",   False, None),
-    ("claude-sonnet-4-6", "anthropic", "claude",   True,  "A"),
-    ("gpt-5-4",           "openai",    "gpt",      False, None),
-    ("gpt-5-4-mini",      "openai",    "gpt",      True,  "B"),
-    ("gemini-3-1-pro",    "google",    "gemini",   False, None),
-    ("gemini-3-flash",    "google",    "gemini",   True,  "C"),
-    ("llama-4-scout",     "groq",      "llama",    False, None),
-    ("llama-3-3-70b",     "groq",      "llama",    False, None),
-    ("kimi-k2",           "groq",      "kimi",     False, None),
-    ("deepseek-v3-2",     "ollama",    "deepseek", False, None),
-    ("qwen3-6-32b",       "ollama",    "qwen",     False, None),
-    ("glm-4-7-flash",     "ollama",    "glm",      False, None),
-    ("gemma-4-26b",       "ollama",    "gemma",    False, None),
+    ("claude-opus-4-7",    "anthropic", "claude",   False, None),
+    ("claude-sonnet-4-6",  "anthropic", "claude",   True,  "A"),
+    ("gpt-5-4",            "openai",    "gpt",      False, None),
+    ("gpt-5-4-mini",       "openai",    "gpt",      True,  "B"),
+    ("gemini-3-1-pro",     "google",    "gemini",   False, None),
+    ("gemini-3-flash",     "google",    "gemini",   True,  "C"),
+    ("llama-4-scout",      "groq",      "llama",    False, None),
+    ("llama-3-3-70b",      "groq",      "llama",    False, None),
+    ("kimi-k2",            "groq",      "kimi",     False, None),
+    ("deepseek-r1-70b",    "ollama",    "deepseek", False, None),
+    ("qwen3-6-35b-a3b",    "ollama",    "qwen",     False, None),
+    ("gemma-4-31b",        "ollama",    "gemma",    False, None),
 ]
 
 ALL_MODEL_IDS = [m[0] for m in MODEL_REGISTRY]

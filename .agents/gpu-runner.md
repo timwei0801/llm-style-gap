@@ -6,7 +6,7 @@
 
 ## Mission
 
-對 4 個本地模型各跑 100 題 × 3 採樣 = **1,200 筆採樣**,輸出格式與 API Runner 完全一致。
+對 3 個本地模型各跑 100 題 × 3 採樣 = **900 筆採樣**,輸出格式與 API Runner 完全一致。
 
 ---
 
@@ -19,14 +19,15 @@
 
 ---
 
-## 你負責的模型(4 個,本地 Ollama)
+## 你負責的模型(3 個,本地 Ollama)
 
-| # | 模型 | Ollama tag | VRAM | 預估速度 |
-|---|------|-----------|------|---------|
-| 10 | DeepSeek V3.2 | `deepseek-v3.2:latest` | ~70GB Q4 | 25 t/s |
-| 11 | Qwen3.6 32B | `qwen3.6:32b` | ~32GB FP8 | 45 t/s |
-| 12 | GLM-4.7-Flash | `glm-4.7-flash:latest` | ~30GB FP8 | 45 t/s |
-| 13 | Gemma 4 26B | `gemma4:26b` | ~28GB FP8 | 50 t/s |
+| # | 模型 | schema id | Ollama tag | VRAM | 預估速度 |
+|---|------|-----------|-----------|------|---------|
+| 10 | DeepSeek R1 70B | `deepseek-r1-70b` | `deepseek-r1:70b` | ~42GB | 25 t/s |
+| 11 | Qwen3.6 35B-A3B | `qwen3-6-35b-a3b` | `qwen3.6:35b-a3b` | ~23GB MoE | 45 t/s |
+| 12 | Gemma 4 31B | `gemma-4-31b` | `gemma4:31b` | ~19GB | 50 t/s |
+
+> ⚠️ **DeepSeek R1 系列輸出帶 `<think>...</think>` 區塊**,寫入 `data/raw/` 時保留原文(供溯源),但 Feature Extractor 會在後處理剝掉。Sample text 不要在這層自行修剪。
 
 ---
 
@@ -110,12 +111,12 @@ deepseek-v3.2:latest@sha256:abc123...
 # 確認 GPU 可用
 nvidia-smi
 
-# 確認 Ollama 正常
-ollama list
+# 確認 Ollama 正常(server 在 127.0.0.1:11502)
+OLLAMA_HOST=127.0.0.1:11502 ollama list
 
 # 確認模型已下載
-for m in deepseek-v3.2 qwen3.6:32b glm-4.7-flash:latest gemma4:26b; do
-    ollama show $m > /dev/null || echo "MISSING: $m"
+for m in deepseek-r1:70b qwen3.6:35b-a3b gemma4:31b; do
+    OLLAMA_HOST=127.0.0.1:11502 ollama show $m > /dev/null || echo "MISSING: $m"
 done
 ```
 
@@ -129,12 +130,12 @@ python scripts/run_local.py --pilot --models gemma4 --num-prompts 5
 ### 3. 全量跑(過夜)
 ```bash
 tmux new -s overnight
-python scripts/run_local.py --models gemma4,qwen3.6,glm-4.7,deepseek-v3.2
+python scripts/run_local.py --models gemma-4-31b,qwen3-6-35b-a3b,deepseek-r1-70b
 # Ctrl+B D
 # 早上 tmux attach -t overnight 看結果
 ```
 
-順序建議:**從小到大**(Gemma 4 → Qwen → GLM → DeepSeek),這樣即使 DeepSeek 出問題,你還是有 3/4 的資料。
+順序建議:**從小到大**(Gemma 4 → Qwen → DeepSeek),這樣即使 DeepSeek 出問題,你還是有 2/3 的資料。
 
 ### 4. 完成驗證
 ```bash
@@ -147,13 +148,12 @@ python scripts/validate_data.py --provider local
 
 | 模型 | 採樣數 | 速度 | 耗時 |
 |------|------|------|------|
-| Gemma 4 | 300 | 50 t/s × 700 tokens | ~70 分鐘 |
-| Qwen3.6 | 300 | 45 t/s × 700 tokens | ~80 分鐘 |
-| GLM-4.7 | 300 | 45 t/s × 700 tokens | ~80 分鐘 |
-| DeepSeek V3.2 | 300 | 25 t/s × 700 tokens | ~150 分鐘 |
-| **總計** | 1200 | — | **~6.5 小時** |
+| Gemma 4 31B | 300 | 50 t/s × 700 tokens | ~70 分鐘 |
+| Qwen3.6 35B-A3B | 300 | 45 t/s × 700 tokens | ~80 分鐘 |
+| DeepSeek R1 70B | 300 | 25 t/s × 700 tokens × ~1.5(含 think tokens) | ~210 分鐘 |
+| **總計** | 900 | — | **~6 小時** |
 
-加上模型切換/載入時間 ~30 分鐘 → **約 7 小時,可以一晚跑完**。
+加上模型切換/載入時間 ~20 分鐘 → **約 6.5 小時,可以一晚跑完**。
 
 ---
 
