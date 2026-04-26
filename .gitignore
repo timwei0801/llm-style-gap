@@ -1,0 +1,98 @@
+# ============================================
+# 🔐 SECRETS — NEVER COMMIT
+# ============================================
+.env
+.env.*
+!.env.example
+*.key
+*.pem
+api_keys.txt
+secrets/
+**/credentials.json
+**/service_account*.json
+
+# ============================================
+# 🐍 Python
+# ============================================
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+*.egg-info/
+*.egg
+
+venv/
+.venv/
+env/
+ENV/
+
+# ============================================
+# 📊 Data — large files stay on server
+# ============================================
+data/raw/
+data/cache/
+data/temp/
+*.parquet
+*.pkl
+*.pickle
+*.npy
+*.npz
+
+!data/samples/
+!data/features/*.csv
+!data/README.md
+
+# ============================================
+# 📝 Logs
+# ============================================
+logs/
+*.log
+*.log.*
+nohup.out
+
+# ============================================
+# �� Notebooks
+# ============================================
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+.jupyter/
+
+# ============================================
+# 🛠 IDE / OS
+# ============================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ============================================
+# 🤖 Claude Code
+# ============================================
+.claude/
+.anthropic/
+claude.lock
+
+# ============================================
+# 📦 Model files (huge!)
+# ============================================
+*.gguf
+*.safetensors
+*.bin
+models/
+ollama_models/
+
+# ============================================
+# 🔬 Experimental / scratch
+# ============================================
+scratch/
+sandbox/
+TODO.local.md
+NOTES.local.md
