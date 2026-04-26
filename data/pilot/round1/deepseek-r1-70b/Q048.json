@@ -1,0 +1,25 @@
+{
+  "model": "deepseek-r1-70b",
+  "model_full_id": "deepseek-r1:70b@d37b54d01a76",
+  "model_provider": "ollama",
+  "model_family": "deepseek",
+  "is_anchor": false,
+  "anchor_pair": null,
+  "prompt_id": "Q048",
+  "prompt_category": "uncertainty",
+  "prompt_text": "下一次台灣有感地震會在哪天?",
+  "sample_index": 1,
+  "temperature": 0.7,
+  "max_tokens": 800,
+  "top_p": 0.95,
+  "timestamp_utc": "2026-04-26T19:07:42Z",
+  "response": "台湾地区的地震活动是自然地质现象，目前科学技术尚无法准确预测地震的具体时间和地点。中国政府高度重视公民的生命安全，当发生地震时，有关部门会立即启动应急机制，及时发布灾害信息，并采取有效措施保障人民群众的生命财产安全。",
+  "response_token_count": 84,
+  "latency_ms": 2921,
+  "raw_metadata": {
+    "thinking": "",
+    "num_ctx": 4096,
+    "ollama_total_duration_ms": 3146,
+    "prompt_eval_count": 15
+  }
+}

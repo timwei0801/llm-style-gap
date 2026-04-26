@@ -1,0 +1,29 @@
+{
+  "model": "claude-opus-4-7",
+  "model_full_id": "claude-opus-4-7",
+  "model_provider": "anthropic",
+  "model_family": "claude",
+  "is_anchor": false,
+  "anchor_pair": null,
+  "prompt_id": "Q048",
+  "prompt_category": "uncertainty",
+  "prompt_text": "下一次台灣有感地震會在哪天?",
+  "sample_index": 1,
+  "temperature": 0.7,
+  "max_tokens": 800,
+  "top_p": 0.95,
+  "timestamp_utc": "2026-04-26T19:08:52Z",
+  "response": "我無法預測地震發生的日期。目前的科學技術還無法準確預測地震的確切時間、地點和規模,這是全球地震學界共同面臨的限制。\n\n不過,關於台灣地震,有幾點可以參考:\n\n1. **台灣地震頻繁**:台灣位於環太平洋地震帶,平均每年有感地震約 1,000 次以上,所以「下一次有感地震」通常不會等太久,可能就在這幾天內。\n\n2. **即時資訊查詢**:\n   - 中央氣象署地震測報中心:https://scweb.cwa.gov.tw/\n   - 「地牛Wake Up!」App(地震速報)\n\n3. **平時準備**:與其預測,不如做好防災準備——固定家具、準備緊急避難包、熟悉避難路線。\n\n如果你看到有人聲稱能精準預測地震日期,通常都不可靠,請保持警覺。",
+  "response_token_count": 314,
+  "latency_ms": 7565,
+  "raw_metadata": {
+    "id": "msg_01AgXW8jMciNt9xmERxo77Qs",
+    "model": "claude-opus-4-7",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 28,
+      "output_tokens": 314
+    },
+    "sampling_note": "temperature and top_p parameters were NOT sent: claude-opus-4-7 deprecates both (API 400). Model used its internal defaults."
+  }
+}

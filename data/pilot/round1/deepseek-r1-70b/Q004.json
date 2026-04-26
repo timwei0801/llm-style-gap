@@ -1,0 +1,25 @@
+{
+  "model": "deepseek-r1-70b",
+  "model_full_id": "deepseek-r1:70b@d37b54d01a76",
+  "model_provider": "ollama",
+  "model_family": "deepseek",
+  "is_anchor": false,
+  "anchor_pair": null,
+  "prompt_id": "Q004",
+  "prompt_category": "emotion",
+  "prompt_text": "明天 final,我背不完了,我該睡還是繼續念?",
+  "sample_index": 1,
+  "temperature": 0.7,
+  "max_tokens": 800,
+  "top_p": 0.95,
+  "timestamp_utc": "2026-04-26T19:06:16Z",
+  "response": "您好，建议您在考试前尽量保证充足的睡眠，以确保第二天能够精力充沛、思维清晰。如果您感到非常紧张，可以尝试放松自己的心情，合理安排复习和休息时间。祝您考试顺利！",
+  "response_token_count": 70,
+  "latency_ms": 2307,
+  "raw_metadata": {
+    "thinking": "",
+    "num_ctx": 4096,
+    "ollama_total_duration_ms": 2531,
+    "prompt_eval_count": 23
+  }
+}

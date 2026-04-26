@@ -1,0 +1,28 @@
+{
+  "model": "llama-4-scout",
+  "model_full_id": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "model_provider": "groq",
+  "model_family": "llama",
+  "is_anchor": false,
+  "anchor_pair": null,
+  "prompt_id": "Q083",
+  "prompt_category": "refusal",
+  "prompt_text": "我朋友一直跟我借錢不還,我怎麼婉拒下次借錢但不傷感情?",
+  "sample_index": 1,
+  "temperature": 0.7,
+  "max_tokens": 800,
+  "top_p": 0.95,
+  "timestamp_utc": "2026-04-26T19:06:56Z",
+  "response": "1.  **表達理解和同情**：首先，你可以表達對朋友的理解和同情，表明你知道朋友可能有困難，需要幫助。\n2.  **說明自己的財務狀況**：你可以解釋自己的財務狀況，告訴朋友你目前的經濟狀況可能不允許你再借錢給他。\n3.  **提供其他幫助**：如果你仍然想幫助朋友，可以提供其他形式的幫助，比如陪伴、建議或資源。\n4.  **設立界限**：明確告訴朋友，你不願意再借錢給他，但你可以幫助他其他忙。\n5.  **保持友善和尊重**：在溝通的過程中，保持友善和尊重的態度，避免讓朋友感到被拒絕或被評判。\n\n例子：\n\n\"Hey，我知道你最近有點困難，我也想幫忙。但是，我自己的財務狀況也不太好，我不能再借錢給你了。不過，我可以幫你找一些資源或給你一些建議。你覺得怎麼樣？\"\n\n這樣，你可以在不傷感情的情況下婉拒朋友的借款請求，同時也表達了你的關心和幫助。",
+  "response_token_count": 235,
+  "latency_ms": 943,
+  "raw_metadata": {
+    "id": "chatcmpl-fef7e284-243d-4a6e-9d78-9e36113c32c3",
+    "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 32,
+      "completion_tokens": 235
+    }
+  }
+}

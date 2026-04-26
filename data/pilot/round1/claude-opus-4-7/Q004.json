@@ -1,0 +1,29 @@
+{
+  "model": "claude-opus-4-7",
+  "model_full_id": "claude-opus-4-7",
+  "model_provider": "anthropic",
+  "model_family": "claude",
+  "is_anchor": false,
+  "anchor_pair": null,
+  "prompt_id": "Q004",
+  "prompt_category": "emotion",
+  "prompt_text": "明天 final,我背不完了,我該睡還是繼續念?",
+  "sample_index": 1,
+  "temperature": 0.7,
+  "max_tokens": 800,
+  "top_p": 0.95,
+  "timestamp_utc": "2026-04-26T19:08:32Z",
+  "response": "這問題沒有標準答案,但給你幾個實際的判斷點:\n\n**先回答幾個問題:**\n1. 現在幾點?距離考試還有幾小時?\n2. 你已經讀了多少?是「完全沒念」還是「念了一些但沒念完」?\n3. 這科是需要理解推導,還是純記憶?\n\n**一般經驗法則:**\n\n- **如果還有 6 小時以上** → 睡 4-5 小時,起床再衝刺。睡眠不足的腦袋背東西效率超低,而且考試時容易斷片。\n\n- **如果只剩 3-4 小時** → 抓重點念 1-2 小時,然後小睡 1-2 小時也比硬撐好。\n\n- **絕對不要做的事**:整夜不睡硬背。研究都顯示熬夜的記憶留存率比睡飽差很多,而且考試當下判斷力下降。\n\n**現實一點的建議:**\n與其想「背完」,不如想「**哪些一定會考、CP 值最高**」,把那些抓住就好。考古題、老師強調過的、章節重點 — 鎖定這些。剩下的接受它,放掉。\n\n你跟我說說現在的狀況,我可以幫你想策略 💪",
+  "response_token_count": 422,
+  "latency_ms": 10301,
+  "raw_metadata": {
+    "id": "msg_013328uTdRTbuY4QihuWiV1i",
+    "model": "claude-opus-4-7",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 34,
+      "output_tokens": 422
+    },
+    "sampling_note": "temperature and top_p parameters were NOT sent: claude-opus-4-7 deprecates both (API 400). Model used its internal defaults."
+  }
+}

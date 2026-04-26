@@ -46,6 +46,35 @@ NUM_SAMPLES_PER_PROMPT = 3
 
 **這些不要動。改了就破壞研究設計。**
 
+### ⚠️ Vendor 強制 deprecate 的處理(C 路線)
+
+部分 vendor 的較新模型 API 已 **deprecate** `temperature` / `top_p`,送出會 HTTP 400。Schema 在 `VENDOR_SKIP_SAMPLING_PARAMS` 列出這些 vendor:
+
+```python
+VENDOR_SKIP_SAMPLING_PARAMS = {
+    "anthropic": ["temperature", "top_p"],   # 2026 起 Claude 系列 deprecate
+}
+```
+
+**實作規則**:
+1. 對 `provider in VENDOR_SKIP_SAMPLING_PARAMS` 的模型,API call 時**不傳**對應參數
+2. JSON 仍記錄 schema 寫死的常數值(`temperature: 0.7`, `top_p: 0.95`)— 這樣 `validate_result` 仍通過、跨模型表面一致
+3. 在 `raw_metadata` 加上 sampling_omitted note,例如:
+   ```json
+   "raw_metadata": {
+     ...,
+     "sampling_omitted": ["temperature", "top_p"],
+     "sampling_note": "Anthropic API deprecated these params; defaults applied server-side."
+   }
+   ```
+4. **報告寫作時,務必在 Limitations 列出這個 vendor-side 限制**(這是 vendor 強加,非研究設計選擇,但會影響跨模型 fairness 的詮釋)
+
+**為什麼用這個方案而不修改 schema**:
+- 保持 `validate_result` 在所有採樣上一致通過
+- JSON 的「intended sampling params」記錄不變,符合 schema 寫死「不要動」精神
+- vendor 限制獨立記錄在 raw_metadata,溯源清楚
+- CLAUDE.md / SamplingResult 結構不需動
+
 ---
 
 ## 必備功能(腳本要實作)

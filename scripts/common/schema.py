@@ -24,6 +24,19 @@ NUM_SAMPLES_PER_PROMPT = 3
 # Our prompts are all <200 tokens and MAX_TOKENS=800, so 4096 is ample.
 OLLAMA_NUM_CTX = 4096
 
+# Some vendor APIs deprecate sampling params; for these providers we omit them
+# at the API call site. JSON records still log the intended values (so
+# validate_result passes), and runners must add a sampling_omitted note in
+# raw_metadata. This is a vendor-imposed limitation, not a research-design
+# choice — document explicitly in report Limitations section.
+#
+# Anthropic: as of 2026, `temperature` and `top_p` are deprecated on
+# claude-opus-4-7 / claude-sonnet-4-6 endpoints (HTTP 400 if sent).
+# Sampling falls back to API default.
+VENDOR_SKIP_SAMPLING_PARAMS = {
+    "anthropic": ["temperature", "top_p"],
+}
+
 # Provider categories
 PROVIDERS = Literal["anthropic", "openai", "google", "groq", "ollama"]
 FAMILIES = Literal[

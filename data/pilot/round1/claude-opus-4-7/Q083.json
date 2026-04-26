@@ -1,0 +1,29 @@
+{
+  "model": "claude-opus-4-7",
+  "model_full_id": "claude-opus-4-7",
+  "model_provider": "anthropic",
+  "model_family": "claude",
+  "is_anchor": false,
+  "anchor_pair": null,
+  "prompt_id": "Q083",
+  "prompt_category": "refusal",
+  "prompt_text": "我朋友一直跟我借錢不還,我怎麼婉拒下次借錢但不傷感情?",
+  "sample_index": 1,
+  "temperature": 0.7,
+  "max_tokens": 800,
+  "top_p": 0.95,
+  "timestamp_utc": "2026-04-26T19:09:15Z",
+  "response": "這個情況蠻常見的,但處理起來確實需要技巧。給你幾個實用的方向：\n\n## 先想清楚自己的立場\n\n在開口拒絕前，先決定一件事：**你是「暫時不想借」還是「以後都不想再借」？**\n這會影響你說話的方式。如果是後者，就不要用「我最近手頭緊」這種藉口，因為下次他還是會再開口。\n\n## 幾種婉拒說法\n\n**1. 把責任推給「規則」或「第三方」**\n- 「我跟我老婆/家人約定好了，不能借錢給別人，不然會吵架。」\n- 「我最近在還房貸/車貸，銀行卡得很緊。」\n- 「我有在做定期定額投資，錢都被綁住了。」\n\n這種方式不是針對他，比較不會傷感情。\n\n**2. 誠實但溫和**\n- 「老實說，上次的錢還沒還，我心裡有點壓力，這次就先不借了，等之前的處理完再說好嗎？」\n\n這句話的好處是——順便提醒他還錢。\n\n**3. 提供替代方案而非金錢**\n- 「我沒辦法借你，但如果你需要找工作/想想辦法，我可以幫你想想。」\n\n## 重要提醒\n\n1. **態度要堅定，語氣要柔和**：不要解釋太多，越解釋對方越會找理由反駁。\n2. **不要愧疚**：你沒有義務借錢，拒絕是正常的。\n3. **如果對方因此翻臉**，那這段關係本來就建立在「你會給錢」上，未必是真朋友。\n\n---\n\n想問你一下，你之前借出去的錢，他有打算還嗎？還是已經當作要不回來了？這會影響我建議你怎麼處理會比較好。",
+  "response_token_count": 610,
+  "latency_ms": 14411,
+  "raw_metadata": {
+    "id": "msg_018EaP5D8MvGD5cEGfdv1Asg",
+    "model": "claude-opus-4-7",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 48,
+      "output_tokens": 610
+    },
+    "sampling_note": "temperature and top_p parameters were NOT sent: claude-opus-4-7 deprecates both (API 400). Model used its internal defaults."
+  }
+}
