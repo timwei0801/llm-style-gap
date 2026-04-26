@@ -16,7 +16,7 @@
 
 ---
 
-## 🤖 Models Under Test (13)
+## 🤖 Models Under Test (12)
 
 | # | Model | Provider | Role |
 |---|-------|----------|------|
@@ -26,13 +26,12 @@
 | 4 | GPT-5.4 mini | OpenAI | ⚓ Anchor B |
 | 5 | Gemini 3.1 Pro | Google | Flagship |
 | 6 | Gemini 3 Flash | Google | ⚓ Anchor C |
-| 7 | Llama 4 Scout | Meta | Open-source |
-| 8 | Llama 3.3 70B | Meta | Cross-gen |
-| 9 | Kimi K2 | Moonshot | China top-tier |
-| 10 | DeepSeek V3.2 | DeepSeek | China reasoning |
-| 11 | Qwen3.6 32B | Alibaba | China general |
-| 12 | GLM-4.7-Flash | Z.ai | China other |
-| 13 | Gemma 4 26B | Google | Lightweight OSS |
+| 7 | Llama 4 Scout | Meta (via Groq) | Open-source |
+| 8 | Llama 3.3 70B | Meta (via Groq) | Cross-gen |
+| 9 | Kimi K2 | Moonshot (via Groq) | China top-tier |
+| 10 | DeepSeek R1 70B | DeepSeek (local Ollama) | China reasoning |
+| 11 | Qwen3.6 35B-A3B | Alibaba (local Ollama) | China general |
+| 12 | Gemma 4 31B | Google (local Ollama) | Lightweight OSS |
 
 ---
 
