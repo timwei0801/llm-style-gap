@@ -18,6 +18,12 @@ TOP_P = 0.95
 MAX_TOKENS = 800
 NUM_SAMPLES_PER_PROMPT = 3
 
+# Ollama-specific: cap context window to avoid KV cache forcing CPU offload.
+# Default 131072 makes deepseek-r1:70b spill 6 layers to CPU on RTX Pro 6000
+# (40 GB KV cache); 4096 keeps all layers on GPU and gives ~30 t/s instead of 0.9.
+# Our prompts are all <200 tokens and MAX_TOKENS=800, so 4096 is ample.
+OLLAMA_NUM_CTX = 4096
+
 # Provider categories
 PROVIDERS = Literal["anthropic", "openai", "google", "groq", "ollama"]
 FAMILIES = Literal[
