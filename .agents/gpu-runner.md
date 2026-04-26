@@ -64,7 +64,47 @@ TEMPERATURE = 0.7
 TOP_P = 0.95
 MAX_TOKENS = 800
 NUM_SAMPLES_PER_PROMPT = 3
+
+# Ollama 專用:必須帶,否則速度會崩(見下節 root cause)
+OLLAMA_NUM_CTX = 4096
 ```
+
+### ⚠️ Ollama context 必須鎖 4096(否則速度差 28×)
+
+**Root cause**:Ollama 對 deepseek-r1:70b 預設 `num_ctx=131072`(131K)。
+- KV cache 吃 **40 GB** VRAM
+- RTX Pro 6000 96GB 加上模型權重不夠裝完整 81 layers
+- **6 層被擠到 CPU** → 0.9 t/s(完全跑不動)
+
+**強制設定 `num_ctx=4096`**:
+- KV cache 從 40 GB → ~1 GB
+- 81 層全進 GPU → **30.5 t/s**
+- 我們的 prompt 都 < 200 tokens、`MAX_TOKENS=800`,4096 綽綽有餘
+
+**所有 Ollama API 呼叫都要帶**:
+```python
+requests.post(f"{OLLAMA_HOST}/api/chat", json={
+    "model": model_id,
+    "messages": [...],
+    "stream": False,
+    "options": {
+        "temperature": TEMPERATURE,
+        "top_p": TOP_P,
+        "num_predict": MAX_TOKENS,
+        "num_ctx": OLLAMA_NUM_CTX,   # ← 不可省
+    }
+})
+```
+
+### Reasoning 模型的 thinking 欄位處理
+
+DeepSeek R1 / Qwen3 / GLM 等 reasoning 模型在 `/api/chat` 回傳:
+- `message.content` = 最終答案(已剝乾淨)
+- `message.thinking` = 思考過程(獨立欄位,**不再是 `<think>` 標籤**)
+
+寫進 `data/raw/` 時:
+- 主 `response` 欄位填 `message.content`
+- 把 `message.thinking` 放進 `raw_metadata.thinking`(供 Feature Extractor 之後挖「思考量比」當風格特徵)
 
 ---
 
@@ -119,6 +159,22 @@ for m in deepseek-r1:70b qwen3.6:35b-a3b gemma4:31b; do
     OLLAMA_HOST=127.0.0.1:11502 ollama show $m > /dev/null || echo "MISSING: $m"
 done
 ```
+
+### 1b. Sanity check: 確認 num_ctx 已鎖到 4096 並且 100% GPU offload
+
+第一個採樣前,先發一筆熱身 + 用 `ollama ps` 驗證:
+
+```bash
+# 熱身一筆(會載入模型)
+curl -s http://127.0.0.1:11502/api/chat -d '{"model":"deepseek-r1:70b","messages":[{"role":"user","content":"hi"}],"stream":false,"options":{"num_ctx":4096,"num_predict":50}}' > /dev/null
+
+# 驗證:PROCESSOR 欄必須是 100% GPU
+OLLAMA_HOST=127.0.0.1:11502 ollama ps
+# 預期:NAME              PROCESSOR
+#       deepseek-r1:70b   100% GPU      ← 不能有 CPU!
+```
+
+如果出現任何 `XX% CPU/YY% GPU`,**立刻停止採樣**,檢查 `num_ctx` 是否真的傳進去了。
 
 ### 2. Pilot 跑
 ```bash
