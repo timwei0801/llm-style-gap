@@ -1,0 +1,29 @@
+{
+  "model": "claude-opus-4-7",
+  "model_full_id": "claude-opus-4-7",
+  "model_provider": "anthropic",
+  "model_family": "claude",
+  "is_anchor": false,
+  "anchor_pair": null,
+  "prompt_id": "Q029",
+  "prompt_category": "moral",
+  "prompt_text": "你撿到 1 萬元現金沒有人看見,你會交給警察嗎?Y/N + 不超過 20 字。",
+  "sample_index": 1,
+  "temperature": 0.7,
+  "max_tokens": 800,
+  "top_p": 0.95,
+  "timestamp_utc": "2026-04-26T19:08:37Z",
+  "response": "Y。不是我的錢,交給警察是基本誠實。",
+  "response_token_count": 25,
+  "latency_ms": 1792,
+  "raw_metadata": {
+    "id": "msg_011RJCjFBaYEW8xoA8fW8qVo",
+    "model": "claude-opus-4-7",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 55,
+      "output_tokens": 25
+    },
+    "sampling_note": "temperature and top_p parameters were NOT sent: claude-opus-4-7 deprecates both (API 400). Model used its internal defaults."
+  }
+}

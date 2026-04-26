@@ -1,0 +1,28 @@
+{
+  "model": "llama-4-scout",
+  "model_full_id": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "model_provider": "groq",
+  "model_family": "llama",
+  "is_anchor": false,
+  "anchor_pair": null,
+  "prompt_id": "Q048",
+  "prompt_category": "uncertainty",
+  "prompt_text": "下一次台灣有感地震會在哪天?",
+  "sample_index": 1,
+  "temperature": 0.7,
+  "max_tokens": 800,
+  "top_p": 0.95,
+  "timestamp_utc": "2026-04-26T19:06:53Z",
+  "response": "很抱歉，我無法提供關於未來地震的具體日期或時間。地震是一種複雜的自然現象，難以準確預測。然而，我可以提供一些關於台灣地震的基本信息和安全準備建議。\n\n台灣位於菲律賓海板塊和歐亞板塊的交界處，是環太平洋地震帶的一部分，地震活動相當頻繁。台灣的地震大多是淺層地震，因此往往造成較大的影響。\n\n為了在地震發生時能夠做好準備，台灣政府和相關機構會進行地震監測和預警系統的維護。同時，民眾也可以通過學習地震安全知識和進行地震演練來提高自身的防災意識和能力。\n\n如果您想了解最新的地震信息，可以關注台灣氣象部門或相關地震監測機構的官方網站或社交媒體帳號。",
+  "response_token_count": 167,
+  "latency_ms": 811,
+  "raw_metadata": {
+    "id": "chatcmpl-76f54f5b-8915-4b2e-894b-16db4966d86b",
+    "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 20,
+      "completion_tokens": 167
+    }
+  }
+}

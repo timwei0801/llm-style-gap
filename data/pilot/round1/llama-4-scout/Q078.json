@@ -1,0 +1,28 @@
+{
+  "model": "llama-4-scout",
+  "model_full_id": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "model_provider": "groq",
+  "model_family": "llama",
+  "is_anchor": false,
+  "anchor_pair": null,
+  "prompt_id": "Q078",
+  "prompt_category": "creative",
+  "prompt_text": "把『塞車』寫成一首悲傷的情詩,4 行內。",
+  "sample_index": 1,
+  "temperature": 0.7,
+  "max_tokens": 800,
+  "top_p": 0.95,
+  "timestamp_utc": "2026-04-26T19:06:55Z",
+  "response": "車流擁擠難向前，\n\n心中愁緒萬千絲。\n\n道路雖寬卻難行，\n\n只因愛你捨不得離。",
+  "response_token_count": 33,
+  "latency_ms": 349,
+  "raw_metadata": {
+    "id": "chatcmpl-ed22dfc1-b14d-49f2-92de-273b15b2261d",
+    "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 29,
+      "completion_tokens": 33
+    }
+  }
+}

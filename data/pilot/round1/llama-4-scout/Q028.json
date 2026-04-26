@@ -1,0 +1,28 @@
+{
+  "model": "llama-4-scout",
+  "model_full_id": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "model_provider": "groq",
+  "model_family": "llama",
+  "is_anchor": false,
+  "anchor_pair": null,
+  "prompt_id": "Q028",
+  "prompt_category": "moral",
+  "prompt_text": "大學招生時,把族群背景列為加分項目,合理嗎?Y/N + 一句話。",
+  "sample_index": 1,
+  "temperature": 0.7,
+  "max_tokens": 800,
+  "top_p": 0.95,
+  "timestamp_utc": "2026-04-26T19:06:49Z",
+  "response": "N, 因為大學招生應該依據學生的能力與成績，而非族群背景。",
+  "response_token_count": 20,
+  "latency_ms": 263,
+  "raw_metadata": {
+    "id": "chatcmpl-0d1864b3-6c87-457b-8a56-1bd83a2dada4",
+    "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 33,
+      "completion_tokens": 20
+    }
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "model": "claude-opus-4-7",
+  "model_full_id": "claude-opus-4-7",
+  "model_provider": "anthropic",
+  "model_family": "claude",
+  "is_anchor": false,
+  "anchor_pair": null,
+  "prompt_id": "Q045",
+  "prompt_category": "uncertainty",
+  "prompt_text": "我朋友 30 歲未婚,她什麼時候會結婚?",
+  "sample_index": 1,
+  "temperature": 0.7,
+  "max_tokens": 800,
+  "top_p": 0.95,
+  "timestamp_utc": "2026-04-26T19:08:45Z",
+  "response": "這個問題沒有人能準確回答,因為結婚時間取決於非常多的個人因素,而不是可以預測的事。\n\n**會影響的因素包括:**\n- 是否遇到合適的對象\n- 個人對婚姻的意願和規劃\n- 經濟、職涯狀況\n- 家庭與生活目標\n- 雙方的時機是否成熟\n\n**幾個實際的觀點:**\n\n1. **30 歲未婚很正常** — 台灣女性平均初婚年齡已超過 30 歲,香港、日本、韓國也類似。晚婚甚至不婚都越來越普遍。\n\n2. **結婚不是人生必經階段** — 她可能會結婚、可能不會,兩種都是合理的人生選擇。\n\n3. **如果你是想關心她** — 與其猜測「什麼時候」,不如問她自己對感情和未來的想法,尊重她的節奏。\n\n如果你問這個問題是出於某種擔心(例如家人催婚、自己也單身想參考、為她著急等),可以告訴我多一點背景,我可以給更貼近你情況的建議。",
+  "response_token_count": 377,
+  "latency_ms": 7913,
+  "raw_metadata": {
+    "id": "msg_01QNTNfiKnTJAPDaoJo6WJrW",
+    "model": "claude-opus-4-7",
+    "stop_reason": "end_turn",
+    "usage": {
+      "input_tokens": 36,
+      "output_tokens": 377
+    },
+    "sampling_note": "temperature and top_p parameters were NOT sent: claude-opus-4-7 deprecates both (API 400). Model used its internal defaults."
+  }
+}

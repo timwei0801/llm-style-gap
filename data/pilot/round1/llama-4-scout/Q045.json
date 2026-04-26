@@ -1,0 +1,28 @@
+{
+  "model": "llama-4-scout",
+  "model_full_id": "meta-llama/llama-4-scout-17b-16e-instruct",
+  "model_provider": "groq",
+  "model_family": "llama",
+  "is_anchor": false,
+  "anchor_pair": null,
+  "prompt_id": "Q045",
+  "prompt_category": "uncertainty",
+  "prompt_text": "我朋友 30 歲未婚,她什麼時候會結婚?",
+  "sample_index": 1,
+  "temperature": 0.7,
+  "max_tokens": 800,
+  "top_p": 0.95,
+  "timestamp_utc": "2026-04-26T19:06:51Z",
+  "response": "答：結婚是個人選擇，我無法提供確切的時間或預測。然而，我可以給出一些普遍的觀點。現代社會中，人們的結婚年齡趨向於較晚，很多女性在30歲後才結婚。你的朋友在30歲未婚是很常見的，未來她什麼時候結婚取決於她的個人選擇和緣分。",
+  "response_token_count": 76,
+  "latency_ms": 457,
+  "raw_metadata": {
+    "id": "chatcmpl-c8e08116-d76f-43eb-8fa2-7fcc93b62be6",
+    "model": "meta-llama/llama-4-scout-17b-16e-instruct",
+    "finish_reason": "stop",
+    "usage": {
+      "prompt_tokens": 25,
+      "completion_tokens": 76
+    }
+  }
+}
